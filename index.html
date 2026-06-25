@@ -178,40 +178,29 @@ body{font-family:"Noto Serif TC","Source Han Serif TC","Songti TC",Georgia,serif
   body{font-size:17px;}.hero-title{font-size:32px;}.toc-title{font-size:26px;}
 }
 
-/* wy-cross-nav-css v1 */
-/* ── 跨卷導覽（側欄底部）── */
-.sb-cross{display:flex;flex-direction:column;align-items:center;gap:8px;
-  width:100%;margin:18px 0 4px;padding:18px 4px 6px;position:relative;}
-.sb-cross::before{content:"";position:absolute;top:0;left:14%;right:14%;
-  height:1px;background:linear-gradient(90deg,
-    transparent 0%,rgba(184,134,11,.15) 18%,
-    var(--gold,#b8860b) 50%,
-    rgba(184,134,11,.15) 82%,transparent 100%);
-  box-shadow:0 1px 0 rgba(212,168,75,.18);}
-.sb-cross::after{content:"";position:absolute;top:6px;left:38%;right:38%;
-  height:1px;background:linear-gradient(90deg,
-    transparent,rgba(184,134,11,.55),transparent);}
-.sb-x{display:flex;flex-direction:column;align-items:center;gap:3px;
-  text-decoration:none;color:var(--sbText,#d4c4a8);padding:4px 4px;width:100%;
-  border-radius:7px;transition:all .25s;}
-.sb-x:hover{background:rgba(184,134,11,.14);transform:translateY(-1px);}
-.sb-x-glyph{width:30px;height:30px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  border:1.2px solid rgba(212,196,168,.55);
-  color:var(--goldL,#d4a84b);font-family:"Noto Sans TC",sans-serif;font-size:14px;
-  background:rgba(184,134,11,.08);transition:all .25s;}
-.sb-x:hover .sb-x-glyph{border-color:var(--gold,#b8860b);color:#fff;
-  background:linear-gradient(135deg,var(--gold,#b8860b),var(--goldL,#d4a84b));
-  box-shadow:0 0 10px rgba(184,134,11,.5);}
-.sb-x-label{font-family:"Noto Sans TC",sans-serif;font-size:10.5px;
-  letter-spacing:1.2px;color:var(--sbText,#d4c4a8);opacity:.78;text-align:center;
-  line-height:1.25;}
-.sb-x:hover .sb-x-label{color:var(--goldL,#d4a84b);opacity:1;}
-.sb-x-hub .sb-x-glyph{background:linear-gradient(135deg,
-  rgba(184,134,11,.22),rgba(212,168,75,.18));
-  border-color:rgba(212,168,75,.55);color:var(--goldL,#d4a84b);font-size:13px;
-  font-weight:700;letter-spacing:1px;}
-
+/* ===== 影音鈕 ===== */
+.toc-card{position:relative;padding-bottom:48px;}
+.toc-video{position:absolute;right:16px;bottom:14px;
+  display:inline-flex;align-items:center;gap:5px;padding:5px 13px;border-radius:20px;
+  background:linear-gradient(135deg,#b8860b,#d4a84b);color:#1e1a14;
+  font-family:"Noto Sans TC",sans-serif;font-size:12.5px;font-weight:700;letter-spacing:1px;
+  cursor:pointer;border:1px solid rgba(184,134,11,.55);box-shadow:0 2px 8px rgba(184,134,11,.32);
+  transition:transform .15s,box-shadow .2s,filter .2s;-webkit-user-select:none;user-select:none;z-index:2;}
+.toc-video:hover{transform:translateY(-1px);filter:brightness(1.08);box-shadow:0 4px 14px rgba(184,134,11,.45);}
+.toc-video:active{transform:translateY(0);}
+.toc-video .tv-ico{font-size:11px;}
+#wyVideoFab{position:fixed;right:20px;bottom:78px;z-index:121;
+  display:none;align-items:center;gap:8px;padding:11px 20px;border-radius:30px;
+  background:linear-gradient(135deg,#b8860b,#d4a84b);color:#1e1a14;
+  font-family:"Noto Sans TC",sans-serif;font-size:14.5px;font-weight:700;letter-spacing:1px;
+  text-decoration:none;border:1px solid rgba(184,134,11,.55);
+  box-shadow:0 6px 20px rgba(0,0,0,.28),inset 0 0 0 1px rgba(255,255,255,.15);
+  transition:transform .15s,box-shadow .2s,filter .2s,opacity .3s;opacity:0;}
+#wyVideoFab.show{display:inline-flex;opacity:1;}
+#wyVideoFab:hover{transform:translateY(-2px);filter:brightness(1.08);box-shadow:0 10px 26px rgba(184,134,11,.48);}
+#wyVideoFab .vfab-ico{font-size:13px;}
+@media print{.toc-video,#wyVideoFab{display:none!important;}}
+@media(max-width:600px){#wyVideoFab{right:14px;bottom:70px;font-size:13px;padding:9px 16px;}}
 </style>
 <meta name="wy-full-protection" content="v2-silent">
 <meta name="GPTBot" content="noai">
@@ -317,21 +306,6 @@ body{font-family:"Noto Serif TC","Source Han Serif TC","Songti TC",Georgia,serif
 <a class="sb-item" href="#chapter-1"><span class="sb-circle">一</span><span class="sb-label" data-wytext="kt2KgvfDjNfbkP/0"></span></a>
 <a class="sb-item" href="#chapter-2"><span class="sb-circle">二</span><span class="sb-label" data-wytext="k8GkguTdjfrl"></span></a>
 </nav>
-  <!-- wy-cross-nav v1 -->
-  <div class="sb-cross">
-    <a class="sb-x" href="https://weiwen0925.github.io/dazhidulun-82/" title="第八十二卷">
-      <span class="sb-x-glyph">←</span>
-      <span class="sb-x-label">卷八十二</span>
-    </a>
-    <a class="sb-x sb-x-hub" href="https://weiwen0925.github.io/dazhidulun-0/" title="大智度論門頁">
-      <span class="sb-x-glyph">智</span>
-      <span class="sb-x-label">門頁</span>
-    </a>
-    <a class="sb-x" href="https://weiwen0925.github.io/dazhidulun-84/" title="第八十四卷">
-      <span class="sb-x-glyph">→</span>
-      <span class="sb-x-label">卷八十四</span>
-    </a>
-  </div>
 </aside>
 <main class="main">
 <div class="site-hero"><div class="hero-inner">
@@ -362,11 +336,11 @@ body{font-family:"Noto Serif TC","Source Han Serif TC","Songti TC",Georgia,serif
 <h2 class="toc-title" data-wytext="kMGQRIbhxkmN+eg="></h2>
 <div class="toc-desc" data-wytext="kvSageTRjeTlkdT8Tu+PE8jzgJPDoYHy+0ir01WJ+O/IvZ7K3ZE="></div>
 <div class="toc-grid">
-<a class="toc-card" href="#chapter-1"><span class="toc-num" data-wytext="k8Gt"></span><span class="toc-body"><span class="toc-name" data-wytext="kNWBgNn6jfrlVa7CTsS/uMjSlpHvlIDfxY365Q=="></span><span class="toc-card-sub" data-wytext="kNWBgNn6jfrlmtD9iYGU1qjb1Pr4yd38ntHijdH0mtKkGPGaVtfv1sTy4Z3syIPR9ZrSodG7oJCRzp2XwoT1x4zh0Ey32Q3Qu4GeutKent+Gz9mB7PKJ4+rKp5bK6Zie4I5Eo81IjOHdiMzzypOT"></span></span></a>
-<a class="toc-card" href="#chapter-2"><span class="toc-num" data-wytext="k8Oh"></span><span class="toc-body"><span class="toc-name" data-wytext="kNWBgNv2jfrlVa7CTsS/uMnOuJH8ioHy+w=="></span><span class="toc-card-sub" data-wytext="kNWBgNv2jfrlVa7CTsqUn8nOspL0rESjzUiBxfmP9e/KrKzO9rCTxoOA2fOO7MNVrsJOyYCexdGxktaLg/rCgM7kkvbxiYK81pH51P/+y+v6WqreRJDp3YqVu9SG1g=="></span></span></a>
+<a class="toc-card" href="#chapter-1"><span class="toc-num" data-wytext="k8Gt"></span><span class="toc-body"><span class="toc-name" data-wytext="kNWBgNn6jfrlVa7CTsS/uMjSlpHvlIDfxY365Q=="></span><span class="toc-card-sub" data-wytext="kNWBgNn6jfrlmtD9iYGU1qjb1Pr4yd38ntHijdH0mtKkGPGaVtfv1sTy4Z3syIPR9ZrSodG7oJCRzp2XwoT1x4zh0Ey32Q3Qu4GeutKent+Gz9mB7PKJ4+rKp5bK6Zie4I5Eo81IjOHdiMzzypOT"></span></span><span aria-label="觀看本品影音講解" class="toc-video" data-wytext="SwpdBQ9aCwUFBh9ITFlOHkQVXlVHz/LXRkcaFBQCS07IhYLE6YI=" data-yt="https://youtu.be/DSVE1xv3uv0" role="button"></span></a>
+<a class="toc-card" href="#chapter-2"><span class="toc-num" data-wytext="k8Oh"></span><span class="toc-body"><span class="toc-name" data-wytext="kNWBgNv2jfrlVa7CTsS/uMnOuJH8ioHy+w=="></span><span class="toc-card-sub" data-wytext="kNWBgNv2jfrlVa7CTsqUn8nOspL0rESjzUiBxfmP9e/KrKzO9rCTxoOA2fOO7MNVrsJOyYCexdGxktaLg/rCgM7kkvbxiYK81pH51P/+y+v6WqreRJDp3YqVu9SG1g=="></span></span><span aria-label="觀看本品影音講解" class="toc-video" data-wytext="SwpdBQ9aCwUFBh9ITFlOHkQVXlVHz/LXRkcaFBQCS07IhYLE6YI=" data-yt="https://youtu.be/t6wsyBA8jJs" role="button"></span></a>
 </div>
 </div>
-<section class="chapter" id="chapter-1">
+<section class="chapter" data-video="https://youtu.be/DSVE1xv3uv0" id="chapter-1">
 <div class="ch-head">
 <div class="ch-num" data-wytext="kvSageTRjeTlkdT8Tu+PE8ranZPBrYHy+0ir01WL2cLJgLPI5bCYxaWDzdaN7MmQ4fSKlKXXlP3Y0+HC2Og="></div>
 <div class="ch-name" data-wytext="nv6mgcXdjv/dkdLKi765"></div>
@@ -378,7 +352,7 @@ body{font-family:"Noto Serif TC","Source Han Serif TC","Songti TC",Georgia,serif
 <div class="bridge bridge-outro"><div class="bridge-label" data-wytext="kfCSgeTyjfz7kNL5"></div><p data-wytext="nv6mgcXdjv/dkdLKi7651pPo0vf1xPLhnezIg9H1lu6g35OZn6jTka7ZhPDzj9XPidv0xZOlwsq9keWtg9T4jv3Sk/HqiLuE15X71/rRydzhnfTXg+HzkvSp3ZeKkLPFlpH/hP/egPPphfjbxZGtzva9n9ihjOnWgOLBluz4ja201rvy1ujczuTsmejlguPVkdCS3bm2lbH6nrfih/bvjPTkiM3uyLi4yMarkeWHgszZjdXrk+fzhoqb1Lfy19fAy/jNn/3mjdTgl+652rO5nrnbkabBhtPejs/qiu3Bzri/y/a/nsORjMD2i+nlk+z7h5eE1Lnp0vf4y+Tvk9LVgMrClu6g14+yn7Hun4DHh+LHjdz+iM3uyKuyzva7nv6mgNnzjuzDkP/0iYGU15X11Pr4zuTqnObMgvznkvSp3pOVk470mq3mhu7ZjMDSiuPXyYaMyOWwkOOph+H2jcbCndTliKiz1pfQ0vf0wtjtk+jbgfDJkdak3raKk6L2nrfggvrkjMvThM3+yo2jy9G6lPmgi932jvHLk/DZi6CP1LnH18DDyOHEnN/Yh/Xtkvqc36eFn5DYkIbwhuDsgPPphfjby5G4y/iUlPmv"></p></div><a class="next-link" data-wytext="kvCggd/6j8XIkdb5i765E+/BEZ7+poDZ847sw5D/9E7PvqE=" href="#chapter-2"></a>
 </div>
 </section>
-<section class="chapter" id="chapter-2">
+<section class="chapter" data-video="https://youtu.be/t6wsyBA8jJs" id="chapter-2">
 <div class="ch-head">
 <div class="ch-num" data-wytext="kvSageTRjeTlkdT8Tu+PE8ranZPDoYHy+0ir01WL2cLJgr/I5bBXu5pEhtbEjdz2ifjv"></div>
 <div class="ch-name" data-wytext="nv6mgNnzjuzDkP/0"></div>
@@ -494,6 +468,41 @@ document.addEventListener('keydown',function(e){var k=e.key;
   window.addEventListener('hashchange',go);
   if(window.__wyReady&&window.__wyReady.then){window.__wyReady.then(function(){setTimeout(go,500);});}
   else{window.addEventListener('load',function(){setTimeout(go,500);});}
+})();
+</script>
+<a aria-label="觀看本品影音講解" href="#" id="wyVideoFab" rel="noopener" target="_blank"><span class="vfab-ico">▶</span><span id="wyVideoTxt"></span></a>
+<script id="wy-video-js">
+(function(){
+  // toc-card 影音膠囊：攔截點擊（避免觸發卡片錨點），開 YouTube
+  document.addEventListener('click',function(e){
+    var b=e.target;while(b&&b!==document&&!(b.classList&&b.classList.contains('toc-video')))b=b.parentElement;
+    if(!b||b===document||!b.classList||!b.classList.contains('toc-video'))return;
+    e.preventDefault();e.stopPropagation();
+    var u=b.getAttribute('data-yt');if(u)window.open(u,'_blank','noopener');
+  },true);
+
+  // 主頁固定「本品影音」浮動鈕：隨閱讀中的品自動切換
+  var fab=document.getElementById('wyVideoFab');
+  var txt=document.getElementById('wyVideoTxt');
+  if(!fab)return;
+  var chapters=document.querySelectorAll('section.chapter');
+  var sbItems=document.querySelectorAll('.sb-item');
+  function pick(){
+    var idx=-1;
+    chapters.forEach(function(s,i){ if(s.getBoundingClientRect().top < window.innerHeight*0.4) idx=i; });
+    if(idx<0){ fab.classList.remove('show'); return; }
+    var url=chapters[idx].getAttribute('data-video');
+    if(!url){ fab.classList.remove('show'); return; }
+    fab.setAttribute('href',url);
+    var name='';
+    try{ name=(sbItems[idx].querySelector('.sb-label')||{}).textContent||''; name=name.trim(); }catch(e){}
+    txt.textContent = name ? ('本品影音 · '+name) : '本品影音';
+    fab.classList.add('show');
+  }
+  window.addEventListener('scroll',pick,{passive:true});
+  window.addEventListener('resize',pick,{passive:true});
+  if(window.__wyReady&&window.__wyReady.then){window.__wyReady.then(function(){setTimeout(pick,600);});}
+  window.addEventListener('load',function(){setTimeout(pick,400);});
 })();
 </script>
 
